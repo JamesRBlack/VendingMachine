@@ -60,9 +60,14 @@ export class PaymentMethodComponent implements OnInit {
             if (paymentMethodType === PaymentMethods.CASH) {
               this._balanceRepoService.deductCashBalance(dispensingItem.cost).subscribe(() => { }, (err) => { })
               .add(() => {});
+              this._balanceRepoService.addVendingMachineCashBalance(dispensingItem.cost).subscribe(() => { }, (err) => { })
+              .add(() => {});
             } else if (paymentMethodType === PaymentMethods.CARD) {
-
+              this._balanceRepoService.addVendingMachineCreditBalance(dispensingItem.cost).subscribe(() => { }, (err) => { })
+              .add(() => {});
             }
+            this._balanceRepoService.addQuantityOfCansSold(1).subscribe(() => { }, (err) => { })
+            .add(() => {});
             this._notificationService.showSuccess(null, `Dispensed item ${dispensingItem.name} successfully. Enjoy your ${dispensingItem.name}.`)
           } else {
             this._notificationService.showError(error, `Dispensed item ${dispensingItem.name} failed.`);

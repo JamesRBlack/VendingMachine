@@ -21,6 +21,18 @@
     margin-right: auto;
   }
 
+  .sidebarItems{
+    position: relative;
+    display: block;
+    border: none;
+    padding: 0.75rem 1.25rem;
+  }
+
+
+  #appContainer{
+    display: flex;
+  }
+
   .vendingMachineStatsContainer{
     border-radius: 15px;
     border: 1px solid;

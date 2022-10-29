@@ -20,23 +20,16 @@ export class InsertCoinComponent implements OnInit, OnDestroy {
     });
   }
 
-  //#region Lifecycle.
   ngOnInit() {
   }
 
   ngOnDestroy() {
     if (this._balanceObservableSubscriber) { this._balanceObservableSubscriber.unsubscribe(); }
   }
-  //#endregion
-
-  //#region Helpers.
-  //#endregion
-
-  //#region Main methods.
-  addCashBalance(amount: number) {
-    this._balanceRepoService.addCashBalance(amount)
+  addCustomerCashBalance(amount: number) {
+    this._balanceRepoService.addCustomerCashBalance(amount)
       .subscribe(() => { }, (err) => { })
       .add(() => {});
   }
-  //#endregion
+
 }
