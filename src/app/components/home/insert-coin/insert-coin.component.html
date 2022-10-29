@@ -1,0 +1,14 @@
+<hr class="border border-primary">
+
+<p class="display-4">Insert coin</p>
+
+<div class="d-flex justify-content-center bg-secondary mb-3">
+    <button type="button" class="btn btn-primary m-3" (click)='AddCashBalance(.05)'>5c</button>
+    <button type="button" class="btn btn-primary m-3" (click)='AddCashBalance(.10)'>10c</button>
+    <button type="button" class="btn btn-primary m-3" (click)='AddCashBalance(.20)'>20c</button>
+    <button type="button" class="btn btn-primary m-3" (click)='AddCashBalance(.50)'>50c</button>
+    <button type="button" class="btn btn-primary m-3" (click)='AddCashBalance(1)'>$1</button>
+    <button type="button" class="btn btn-primary m-3" (click)='AddCashBalance(2)'>$2</button>
+</div>
+
+<p class="display-4">Available Cash balance: {{_balance | currency:'USD'}}</p>

@@ -1,0 +1,25 @@
+<div class="title-bar">
+    <div class="title">Vending Machine</div>
+</div>
+<div style="display:flex">
+  <div class="container" id="vendingMachineInterface">
+    <app-insert-coin></app-insert-coin>
+    <app-items (selectedDrinkEvent)="triggerPurchase($event)"></app-items>
+    <app-payment-method></app-payment-method>
+    </div>
+  <div id="sidebar">
+    <div class="card">
+      <ul class="list-group list-group-flush ">
+          <li class="list-group-item" style="border: none;">
+              <strong>Cash in Machine</strong> : $12333434
+          </li>
+          <li class="list-group-item" style="border: none">
+              <strong>Credit Card Collection Amount</strong>: $2837487248723847283
+          </li>
+          <li class="list-group-item" style="border: none">
+              <strong>Number of cans sold</strong>: 123442342423423
+          </li>
+      </ul>
+    </div>
+</div>    
+  </div>

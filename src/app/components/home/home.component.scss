@@ -1,0 +1,28 @@
+.title-bar {
+    background-color: #48A6B8;
+    font-style: italic;
+    margin-bottom: 3%;
+    color: #fff;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 180%;
+  }
+
+  #vendingMachineInterface{
+    margin-right: 0;
+    width: 80%;
+  }
+
+  #sidebar{
+    width: 20%;
+    margin-right: auto;
+  }
+
+  .vendingMachineStatsContainer{
+    border-radius: 15px;
+    border: 1px solid;
+    height: 70px;
+  }

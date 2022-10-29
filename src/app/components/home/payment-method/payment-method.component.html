@@ -1,0 +1,6 @@
+<p class="display-4">Pay With Payment Method</p>
+
+<div class="d-flex justify-content-center bg-secondary mb-3">
+    <button type="button" [disabled]="!selectedDrink" class="btn btn-primary m-3" (click)='payWithCash()'>Purchase with Cash</button>
+    <button type="button" [disabled]="!selectedDrink" class="btn btn-primary m-3" (click)='payWithCard()'>Purchase with Credit Paywave</button>
+</div>
