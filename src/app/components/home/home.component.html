@@ -11,15 +11,16 @@
     <div class="card">
       <ul class="list-group list-group-flush ">
           <li class="list-group-item" class="sidebarItems">
-              <strong>Cash Collection Amount in Machine</strong> : ${{_vendingMachineCashBalance | number : '1.2-2'}}
+              <strong>Cash collection amount in machine</strong> : ${{_vendingMachineCashBalance | number : '1.2-2'}}
           </li>
           <li class="list-group-item" class="sidebarItems">
-              <strong>Credit Card Collection Amount</strong>: ${{_vendingMachineCreditBalance | number : '1.2-2'}}
+              <strong>Credit card collection amount</strong>: ${{_vendingMachineCreditBalance | number : '1.2-2'}}
           </li>
           <li class="list-group-item" class="sidebarItems">
-              <strong>Number of Cans Sold</strong>: {{_quantityOfCansSold}}
+              <strong>Number of cans sold</strong>: {{_quantityOfCansSold}}
           </li>
       </ul>
     </div>
-</div>    
+    <button type="button" class="btn btn-primary m-3" (click)="restockMachine()">Restock machine</button>
+  </div>    
   </div>

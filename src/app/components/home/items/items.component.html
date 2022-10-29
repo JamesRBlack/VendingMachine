@@ -1,9 +1,9 @@
 <hr class="border border-primary">
 
-<p class="display-4">Select an item to dispense - {{selectedDrink ? selectedDrink.name : 'Not Set'}}</p>
+<p class="display-4">Select an item to dispense - {{selectedDrink ? selectedDrink.name : 'Not set'}}</p>
 
 <div class="d-flex justify-content-center bg-secondary mb-3">
-    <button type="button" *ngFor="let item of _items" class="btn btn-success m-3" (click)="onSelectDrink(item)">
+    <button type="button" *ngFor="let item of _items" class="btn btn-success m-3 drinkButton" (click)="onSelectDrink(item)">
         <span class="badge badge-light">{{item.cost | currency:'AUD'}}</span> {{item.name}} <span class="badge badge-light">{{item.remaining}}</span>
     </button>
 </div>

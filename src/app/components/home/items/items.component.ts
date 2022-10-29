@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { BalanceRepoService } from 'src/app/shared/data/repositories/balance-repo.service';
 import { ItemRepoService } from 'src/app/shared/data/repositories/item-repo.service';
 import { Item } from 'src/app/shared/models/item.model';
+import { CommonService } from 'src/app/shared/services/common.service';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
 
   constructor(
     private _itemRepoService: ItemRepoService,
-    private _notificationService: NotificationService,
+    private _commonService: CommonService
   ) {
   }
 
@@ -29,7 +30,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
     this._itemsObservableSubscriber = this._itemRepoService.itemsObservable.subscribe(data => {
       this._items = JSON.parse(JSON.stringify(data));
     });
-    this._getList();
+    this._commonService.getList().subscribe(data => {});
   }
 
   ngOnDestroy() {
@@ -42,17 +43,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
     this.selectedDrinkEvent.emit(item);
   }
 
-  private _getList(): void {
-    let isOk = false,  error = null;
-    
-    this._itemRepoService.getList(null)
-      .subscribe(() => { isOk = true; }, (err) => { error = err; })
-      .add(() => {
-        if (isOk) {
-        } else {
-          this._notificationService.showError(null, 'GET data failed.');
-        }
-      });
-  }
+
   //#endregion.
 }

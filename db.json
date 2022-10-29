@@ -3,30 +3,72 @@
     {
       "id": 1,
       "name": "Sprite",
-      "cost": 0.5,
-      "remaining": 6,
+      "cost": 2.2,
+      "remaining": 5,
       "code": "A1"
     },
     {
       "id": 2,
       "name": "Coke",
-      "cost": 1,
-      "remaining": -51,
+      "cost": 2.2,
+      "remaining": 4,
       "code": "B2"
     },
     {
       "id": 3,
       "name": "Pepsi",
-      "cost": 1.75,
-      "remaining": 3,
+      "cost": 2.2,
+      "remaining": 1,
       "code": "C3"
     },
     {
       "id": 4,
-      "name": "Water",
-      "cost": 0.5,
-      "remaining": 9,
+      "name": "Fizzy",
+      "cost": 2.2,
+      "remaining": 5,
       "code": "D4"
+    },
+    {
+      "id": 5,
+      "name": "Sunlit",
+      "cost": 2.2,
+      "remaining": 0,
+      "code": "E4"
+    },
+    {
+      "id": 6,
+      "name": "Jump",
+      "cost": 2.2,
+      "remaining": 0,
+      "code": "F4"
+    },
+    {
+      "id": 7,
+      "name": "Fanta",
+      "cost": 2.2,
+      "remaining": 3,
+      "code": "G4"
+    },
+    {
+      "id": 8,
+      "name": "Lemon Squash",
+      "cost": 2.2,
+      "remaining": 3,
+      "code": "H4"
+    },
+    {
+      "id": 9,
+      "name": "Pasito",
+      "cost": 2.2,
+      "remaining": 4,
+      "code": "I4"
+    },
+    {
+      "id": 10,
+      "name": "Dr Pepper",
+      "cost": 2.2,
+      "remaining": 5,
+      "code": "J4"
     }
   ]
 }

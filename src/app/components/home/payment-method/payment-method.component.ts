@@ -18,6 +18,7 @@ export class PaymentMethodComponent implements OnInit {
   private _itemsObservableSubscriber: Subscription;
   _balance?: number = 0;
   private selectedDrink: Item = null;
+  
 
   constructor(
     private _balanceRepoService: BalanceRepoService,
@@ -47,6 +48,11 @@ export class PaymentMethodComponent implements OnInit {
   private _dispenseItem(dispensingItem: Item, paymentMethodType: String) {
       if (paymentMethodType === PaymentMethods.CASH && this._balance < dispensingItem.cost) {
         this._notificationService.showWarning('Insufficient balance. Please insert coin.', null);
+        return;
+      }
+
+      if (dispensingItem.remaining <= 0) {
+        this._notificationService.showWarning('No remaining inventory for this item. Please edit db.json to restock.', null);
         return;
       }
 

@@ -9,6 +9,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class ItemRepoService {
   private _dataStore: { items: Item[] };
+  _items: Item[] = [];
   private _itemsBehaviorSubject: BehaviorSubject<Item[]> = new BehaviorSubject([]);
   itemsObservable: Observable<Item[]>;
 
@@ -72,11 +73,12 @@ export class ItemRepoService {
   }
 
 
-  restockVendingMachine(paramObj: Item): Observable<Item> {
+  restockVendingMachine(items: Item[]): Observable<Item> {
     let isOk = false, response: Item = null, error = null;
-
     return new Observable((observer) => {
-      this._apiService.httpClientPut(`${AppConstants.apiUrl}/${paramObj.id}`, paramObj)
+      for (let item of items) {
+        item.remaining = 5;
+      this._apiService.httpClientPut(`${AppConstants.apiUrl}/${item.id}`, item)
         .subscribe(
           (res) => { response = res, isOk = true; },
           (err) => { error = err; }
@@ -88,7 +90,7 @@ export class ItemRepoService {
               this._dataStore.items[updatingItemIndex] = response;
               this._itemsBehaviorSubject.next(Object.assign([], this._dataStore.items));
             }
-            observer.next();
+            observer.next( );
           }
           else {
             console.error('ItemRepoService updatePost failed. Error is: ' + JSON.stringify(error));
@@ -96,6 +98,7 @@ export class ItemRepoService {
           }
           observer.complete();
         });
+      }
     });
   }
   //#endregion.

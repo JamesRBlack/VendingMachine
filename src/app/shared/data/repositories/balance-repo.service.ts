@@ -28,7 +28,6 @@ export class BalanceRepoService {
   addCustomerCashBalance(amount: number): Observable<number> {
     return new Observable((subscriber) => {
       try {
-        console.log('test');
         this._dataStore.balance += amount;
         this._balanceBehaviorSubject.next(this._dataStore.balance)
         subscriber.next();
@@ -83,7 +82,7 @@ export class BalanceRepoService {
   }
 
 
-  resetVendingMachineBalance(): Observable<number> {
+  resetVendingMachine(): Observable<number> {
     return new Observable((subscriber) => {
       try {
         this._dataStore.balance = 0;
@@ -92,6 +91,7 @@ export class BalanceRepoService {
         this._dataStore.quantityOfCansSold = 0;
         this._balanceBehaviorSubject.next(this._dataStore.balance);
         this._vendingMachineCashBalanceBehaviorSubject.next(this._dataStore.cashBalance);
+        this._vendingMachineCreditBalanceSubject.next(this._dataStore.creditBalance);
         this._quantityOfCansSoldSubject.next(this._dataStore.quantityOfCansSold);
         subscriber.next();
       } catch (error) {
