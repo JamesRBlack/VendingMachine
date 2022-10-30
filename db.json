@@ -11,14 +11,14 @@
       "id": 2,
       "name": "Coke",
       "cost": 2.2,
-      "remaining": 4,
+      "remaining": 5,
       "code": "B2"
     },
     {
       "id": 3,
       "name": "Pepsi",
       "cost": 2.2,
-      "remaining": 1,
+      "remaining": 5,
       "code": "C3"
     },
     {
@@ -32,35 +32,35 @@
       "id": 5,
       "name": "Sunlit",
       "cost": 2.2,
-      "remaining": 0,
+      "remaining": 5,
       "code": "E4"
     },
     {
       "id": 6,
       "name": "Jump",
       "cost": 2.2,
-      "remaining": 0,
+      "remaining": 5,
       "code": "F4"
     },
     {
       "id": 7,
       "name": "Fanta",
       "cost": 2.2,
-      "remaining": 3,
+      "remaining": 5,
       "code": "G4"
     },
     {
       "id": 8,
       "name": "Lemon Squash",
       "cost": 2.2,
-      "remaining": 3,
+      "remaining": 5,
       "code": "H4"
     },
     {
       "id": 9,
       "name": "Pasito",
       "cost": 2.2,
-      "remaining": 4,
+      "remaining": 5,
       "code": "I4"
     },
     {
